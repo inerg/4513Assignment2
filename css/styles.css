@@ -1,0 +1,113 @@
+@import url(https://fonts.googleapis.com/css?family=Muli:300);
+
+body {
+	background-color: #a5ca70;
+}
+
+h1, h2 {
+	font-family: 'Muli', sans-serif;
+	font-weight: bold;
+}
+
+h3 {
+	color: #d81b60;
+	font-family: 'Muli', sans-serif;
+}
+
+a:hover {
+	border-bottom: 2px solid #B71C1C;
+    background-color: #FFF;
+	color: #B71C1C;
+}
+
+a:link, a:visited {
+	color: #ff6f00;
+}
+
+table, th, td {
+   border: 1px solid #ec8484;
+} 
+
+tr:nth-child(even) {
+    background-color: #ec8484;
+}
+
+a.wll-link:link, a.wll-link:visited, a.wll-link:hover, a.wll-link:active {
+	color: #000;
+	border-bottom: none;
+}
+
+.clear-pm {
+	padding: 0;
+	margin: 0;
+}
+
+.button {
+	background-color: #8fbd4d;
+}
+
+.button:hover, .button:focus {
+    background-color: #d81b60;
+    color: #fefefe;
+}
+
+.curved-borders {
+	border-radius: 25px;
+    border: 3px solid #679b1d;
+}
+
+.pink {
+	color: #d81b60;
+}
+
+.black {
+	color: #000;
+}
+
+.dot-com {
+	color: #679b1d;
+	font-size: 0.6em;
+}
+
+.top-bar {
+	border-bottom: 10px solid #B71C1C;
+	margin-bottom: 1em;
+	background-color: #FFF;
+}
+
+.menu-text, .top-bar, .top-bar ul {
+	background-color: #FFF;
+}
+
+.nav-welcome {
+	width: 15em;
+	padding-top: 3em;
+}
+
+.menu > li > a {
+    display: inline-block;
+	padding: 0;
+	font-weight: normal;
+}
+
+.nav-divide {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+.title {
+	background-color: #B71C1C;
+	color: #FFF;
+	text-align: center;
+	position: relative;
+	bottom: 26px;
+	padding-bottom: 3px;
+	padding-top: 5px;
+	border-bottom: 3px solid #000;
+	border-top: 3px solid #000;
+}
+
+.about-adj {
+	padding-left: 5em;
+	padding-right: 0.5em;
+}
