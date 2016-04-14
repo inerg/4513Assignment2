@@ -9,6 +9,7 @@
     
 	<link rel="stylesheet" href="css/foundation.css">
 	<link rel="stylesheet" href="css/styles.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	
 	<script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>
@@ -52,15 +53,18 @@
 			<div class="callout curved-borders">
 				<h3><span class="black">To-Do</span> List</h3>
 				<div>
-					<ul class="inline-list">
+					<ul class="menu">
+						<li>Sort by: </li>
 						<li><a>Date</a></li>
 					</ul>
 				</div>
-				<div><span class="warning badge">X</span> Nunc nisl.</div>
-				<div><span class="warning badge">X</span> Integer ac neque.</div>
-				<div><span class="success badge">X</span> Aliquam sit amet diam in magna bibendum imperdiet.</div>
-				<div><span class="alert badge">X</span> Suspendisse accumsan tortor quis turpis.</div>
+				<ul class="no-bullet">
+					<li><div class="callout warning curved-borders"><i class="material-icons float-left">clear</i></a> Nunc nisl.<a href="" ><i class="material-icons float-right">mode_edit</i></a></div></li>					<li class="callout warning curved-borders"><i class="material-icons float-left">clear</i></a> Integer ac neque.<a href="" ><i class="material-icons float-right">mode_edit</i></a></li>
+					<li><div class="callout success curved-borders"><i class="material-icons float-left">clear</i></a> Aliquam sit amet diam in magna bibendum imperdiet.<a href="" ><i class="material-icons float-right">mode_edit</i></a></div></li>
+					<li><div class="callout alert curved-borders"><i class="material-icons float-left">clear</i></a> Suspendisse accumsan tortor quis turpis.<a href="" ><i class="material-icons float-right">mode_edit</i></a><div></div></li>
 
+					<a href="" ><i class="material-icons float-right">add</i></a></br>
+				</ul>
 			</div>
 		</div><!-- /To-Do List -->
 		
@@ -111,15 +115,67 @@
 
 			</div>
 		</div><!-- Message List -->
-    </div>
+	</div>
+
 	
 	<div class="row">
 		<div class="small-8 small-offset-4 columns">
 			<div class="callout curved-borders">
 				<h3><span class="black">Book</span> List</h3>
-				<p>Writing of some sort</p>
+				<table>
+					<thead>
+					<tr>
+						<th>
+							isbn10 <i class="material-icons">keyboard_arrow_up</i>
+						</th>
+						<th>
+							Title
+						</th>
+						<th>
+							Category
+						</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								0133251039
+							</td>
+							<td>
+								Introduction to Financial Accounting
+							</td>
+							<td>
+								Business
+							</td>
+						</tr>
+						<tr>
+							<td>
+								0133127648
+							</td>
+							<td>
+								Public Relations Practices
+							</td>
+							<td>
+								Business
+							</td>
+						</tr>
+						<tr>
+							<td>
+								0321826035
+							</td>
+							<td>
+								Introductory & Intermediate Algebra 3e
+							</td>
+							<td>
+								Mathematics
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
 			</div>
 		</div><!-- Book List -->
+	</div>
 	</div>
 
 </body>
