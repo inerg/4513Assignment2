@@ -1,0 +1,40 @@
+<div class="small-4 columns">
+    <div class="callout curved-borders">
+        <h3><span class="black">To-Do</span> List</h3>
+        <ul class="no-bullet">
+            <li ng-repeat="t in todo | orderBy:date">
+                <div ng-if="t.priority == medium" class="callout warning curved-borders">
+                <div ng-if="t.priority == low" class="callout success curved-borders">
+                <div ng-if="t.priority == high" class="callout alert curved-borders">
+                    <a href="{{ t.id + ',' + t.delete }}" ><i class="material-icons float-left">clear</i></a>
+                    Nunc nisl.
+                    <a href="{{ t.id + ',' + t.edit }}" ><i class="material-icons float-right">mode_edit</i></a>
+                </div>
+            </li>
+
+
+
+
+
+            <li class="callout warning curved-borders">
+                <a href=""><i class="material-icons float-left">clear</i></a>
+                Nunc nisl.
+                <a href="" ><i class="material-icons float-right">mode_edit</i></a></li>
+            <li class="callout warning curved-borders">
+                <a href=""><i class="material-icons float-left">clear</i></a>
+                Integer ac neque.
+                <a href="" ><i class="material-icons float-right">mode_edit</i></a></li>
+            <li class="callout success curved-borders">
+                <a href=""><i class="material-icons float-left">clear</i></a>
+                Aliquam sit amet diam in magna bibendum imperdiet.
+                <a href="" ><i class="material-icons float-right">mode_edit</i></a></li>
+            <li class="callout alert curved-borders">
+                <a href=""><i class="material-icons float-left">clear</i></a>
+                Suspendisse accumsan tortor quis turpis.
+                <a href="" ><i class="material-icons float-right">mode_edit</i></a>
+            </li>
+
+            <a href="" ><i class="material-icons float-right">add</i></a></br>
+        </ul>
+    </div>
+</div><!-- /To-Do List -->
