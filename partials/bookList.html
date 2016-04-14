@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="small-8 small-offset-4 columns">
+        <div class="callout curved-borders">
+            <h3><span class="black">Book</span> List</h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>
+                        <a href="" ng-click="sortField=='isbn'; sortReverse = !sortReverse">isbn10</a>
+                    </th>
+                    <th>
+                        <a href="" ng-click="sortField=='title'; sortReverse = !sortReverse">Title</a>
+                    </th>
+                    <th>
+                        <a href="" ng-click="sortField=='category'; sortReverse = !sortReverse">Category</a>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="b in books | filter: query | orderBy:sortField:sortReverse">
+                    <td>
+                        {{ b.isbn10 }}
+                    </td>
+                    <td>
+                        {{ b.title }}
+                    </td>
+                    <td>
+                        {{ b.category }}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div><!-- Book List -->
