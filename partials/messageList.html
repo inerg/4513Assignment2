@@ -1,0 +1,45 @@
+<div class="small-8 columns">
+    <div class="callout curved-borders">
+        <h3><span class="black">Message</span> List</h3>
+        <div class="callout" ng-repeat="m in messages | orderBy:date">
+            <ul class="no-bullet">
+                <li>
+                    {{ m.contact.firstname + " " + m.contact.lastname}}
+                </li>
+                <li>
+                    {{ m.date }}
+                </li>
+                <li>
+                    Category: {{m.category}}
+                </li>
+                <li>
+                    <a data-open="{{ m.contact.university + m.id }}Modal">University name</a>
+                </li>
+            </ul>
+            <p>{{ m.content }}</p>
+
+            <div class="reveal" id="{{ m.contact.university + m.id }}Modal" data-reveal>
+                University details
+                <ul class="no-bullet">
+                    <li>
+                        {{ m.contact.university.name }}
+                    </li>
+                    <li>
+                        Address: {{ m.contact.university.address + ", " + m.contact.university.city + ", " + m.contact.university.state }}
+                    </li>
+                    <li>
+                        {{ m.contact.university.zip }}
+                    </li>
+                    <li>
+                        <a href="{{ m.contact.university.website }}">{{ m.contact.university.website }}</a>
+                    </li>
+                </ul>
+                <img src="https://maps.googleapis.com/maps/api/staticmap?center={{ m.contact.university.latitude }},{{ m.contact.university.longitude }}&zoom=13&size=600x300&maptype=hybrid&key=AIzaSyCkJDwm_5eTtWNLlnFDHz9LQ3O_otXVBVo">
+                <button class="close-button" data-close aria-label="Close reveal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div><!-- Message List -->

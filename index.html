@@ -51,14 +51,64 @@
 		<div class="small-4 columns">
 			<div class="callout curved-borders">
 				<h3><span class="black">To-Do</span> List</h3>
-				<p>Writing of some sort</p>
+				<div>
+					<ul class="inline-list">
+						<li><a>Date</a></li>
+					</ul>
+				</div>
+				<div><span class="warning badge">X</span> Nunc nisl.</div>
+				<div><span class="warning badge">X</span> Integer ac neque.</div>
+				<div><span class="success badge">X</span> Aliquam sit amet diam in magna bibendum imperdiet.</div>
+				<div><span class="alert badge">X</span> Suspendisse accumsan tortor quis turpis.</div>
+
 			</div>
 		</div><!-- /To-Do List -->
 		
 		<div class="small-8 columns">
 			<div class="callout curved-borders">
 				<h3><span class="black">Message</span> List</h3>
-				<p>Writing of some sort</p>
+				<div class="callout">
+					<ul class="no-bullet">
+						<li>
+							Kenneth Reed
+						</li>
+						<li>
+							8/10/2015
+						</li>
+						<li>
+							Response
+						</li>
+						<li>
+							<a data-open="universityModal">University name</a>
+						</li>
+					</ul>
+					<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra,
+						magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi."</p>
+
+					<div class="reveal" id="universityModal" data-reveal>
+						University details
+						<ul class="no-bullet">
+							<li>
+								Immaculata University
+							</li>
+							<li>
+								Address:  1145 King Rd, Immaculata, Pennsylvania
+							</li>
+							<li>
+								19345-0702
+							</li>
+							<li>
+								<a href="www.immaculata.edu">www.immaculata.edu</a>
+							</li>
+						</ul>
+						<img src="https://maps.googleapis.com/maps/api/staticmap?center=39.980943,-75.158267&zoom=13&size=600x300&maptype=hybrid&key=AIzaSyCkJDwm_5eTtWNLlnFDHz9LQ3O_otXVBVo">
+						<!--Map of university (yes)< AIzaSyCkJDwm_5eTtWNLlnFDHz9LQ3O_otXVBVo>-->
+						<button class="close-button" data-close aria-label="Close reveal" type="button">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				</div>
+
 			</div>
 		</div><!-- Message List -->
     </div>
