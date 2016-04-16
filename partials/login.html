@@ -1,0 +1,42 @@
+
+	<!-- Navigation -->
+	<div class="top-bar">
+		<div class="top-bar-left">
+			<h1 class="clear-pm">
+				<a class="wll-link" href="index.html">
+				We<span class="pink">Love</span>Lists<span class="dot-com">.com</span>
+				</a>
+			</h1>
+		</div>
+		
+		<div class="top-bar-right">
+			<ul class="menu">
+			  <li><img src="resources/small-logo.png"/></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- Login -->
+    <div class="row">
+		<div class="small-6 small-offset-3 columns">
+			<div class="callout large curved-borders">
+			<form data-abide ng-submit="login(credentials)">
+				<h3>Sign In</h3>
+				<label id="username">Username
+					<input type="text" required ng-model="credentials.username">
+					<span class="form-error">
+						! Invalid Username
+					</span>
+				</label>
+				<label id="password">Password
+					<input type="password" required ng-model="credentials.password">
+					<span class="form-error">
+						! Invalid Password
+					</span>
+				</label>
+				<button type="submit" class="button curved-borders">LOGIN</button>
+			</form>
+			</div>
+		</div>
+    </div>
+

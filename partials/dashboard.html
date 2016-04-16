@@ -1,0 +1,173 @@
+	<!-- Navigation -->
+	<div class="top-bar">
+		<div class="top-bar-left">
+			<h1 class="clear-pm">
+				<a class="wll-link" href="index.html">
+				We<span class="pink">Love</span>Lists<span class="dot-com">.com</span>
+				</a>
+			</h1>
+			<ul class="menu menu-text clear-pm">
+				<li class="about-adj">
+					<span class="nav-divide">|</span>
+					<a href="#/about.html"> About </a>
+				</li>
+				<li>
+					<span class="nav-divide">|</span>
+					<a href="#/dashboard.html"> Dashboard </a>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="top-bar-right">
+			<ul class="menu">
+			  <li class="nav-welcome">Welcome, {{user.employee.firstname}} <span class="nav-divide">|</span> <a ng-click="logout()">Logout</a></li>
+			  <li><img src="resources/small-logo.png"/></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- Content -->
+	<div class="title"><h2>Dashboard</h2></div>
+    <div class="row">
+		<div class="small-4 columns">
+		    <div class="callout curved-borders">
+		        <h3><span class="black">To-Do</span> List</h3>
+		        <ul class="no-bullet">
+		        	<div ng-repeat="u in user">
+			            <li ng-repeat="t in u.todo | orderBy:'-date'">
+			            	 <span class="date-label">{{ t.date | limitTo: 10 }}{{myString.length > 10 ? '' : ''}}</span>
+			                 <div ng-if="t.priority == 'medium'" class="callout warning curved-borders-med">
+			                	<a ng-click="deltodo(t.id)" ><i class="material-icons float-left">clear</i></a>
+			                    {{ t.description }}
+			                    <br/><span class="warning label">{{ t.priority }}</span>
+			                    <span class="pink-label label">{{ t.status }}</span>
+			                    <a href="#/todo.html" ><i class="material-icons float-right">mode_edit</i></a>
+		                    </div>
+			                <div ng-if="t.priority == 'low'" class="callout success curved-borders">
+			                	<a ng-click="deltodo(t.id)" ><i class="material-icons float-left">clear</i></a>
+			                    {{ t.description }}
+			                    <br/><span class="success label">{{ t.priority }}</span>
+			                    <span class="pink-label label">{{ t.status }}</span>
+			                    <a href="#/todo.html" ><i class="material-icons float-right">mode_edit</i></a>
+		                    </div>
+			                <div ng-if="t.priority == 'high'" class="callout alert curved-borders-high">
+			                    <a ng-click="deltodo(t.id)" ><i class="material-icons float-left">clear</i></a>
+			                   	{{ t.description }}
+			                    <br/><span class="alert label">{{ t.priority }}</span>
+			                    <span class="pink-label label">{{ t.status }}</span>
+			                    <a href="#/todo.html" ><i class="material-icons float-right">mode_edit</i></a>
+			                </div>
+			            </li>
+					</div>
+					
+					<div class="callout warning curved-borders-med">
+						<h3><span class="black">Create</span> To-Do:</h3>
+						<input placeholder="Enter a description here..." type="text" ng-model="description">
+						
+                		<select name="statusSelect" id="statusSelect" ng-model="data.statusSelect">
+                    		<option value="" disabled>Choose a Status</option>
+        	    	        <option value="pending">Pending</option>
+            	    	    <option value="active">Active</option>
+        		            <option value="completed">Completed</option>
+              			</select><br>
+                    
+                		<select name="prioritySelect" id="prioritySelect" ng-model="data.prioritySelect">
+                    		<option value="" disabled>Choose a Priority</option>
+                    		<option value="low">Low</option>
+                    		<option value="medium">Medium</option>
+                    		<option value="high">High</option>
+                		</select><br>
+                	
+                		<a class="button" ng-click="addtodo(description, data.statusSelect, data.prioritySelect)" >Create</a>
+                	</div>
+		        </ul>
+		    </div>
+		</div><!-- /To-Do List -->
+		
+		<div class="small-8 columns">
+    	<div class="callout curved-borders">
+	        <h3><span class="black">Message</span> List</h3>
+	        	<div class="callout" ng-repeat="m in user.employee.messages | orderBy: orderByDate">
+		            <ul class="no-bullet">
+		                <li class="date-label">
+		                    {{ m.contact.firstname + " " + m.contact.lastname}} - {{ m.date }}
+		                </li>
+		                <li>
+		                    <span class="bold-text">Category:</span> {{m.category}}
+		                </li>
+		                <li>
+		                	<span class="bold-text">University: </span>
+		                    <a data-modal="#{{ m.contact.university.id + m.id }}Modal" rel="modal:open">{{ m.contact.university.name }}</a>
+		                </li>
+		            </ul>					
+		            <p>{{ m.content }}</p>
+					
+		            <div id="{{ m.contact.university.id + m.id }}Modal" style="display:none" class="modal">
+		               <h3><span class="black">University</span> Details</h3>
+		                <ul class="no-bullet">
+		                    <li class="date-label">
+		                        {{ m.contact.university.name }}
+		                    </li>
+		                    <li>
+		                        <span class="bold-text">Address:</span> {{ m.contact.university.address + ", " + m.contact.university.city + ", " + m.contact.university.state }}
+		                    </li>
+		                    <li>
+		                        <span class="bold-text">Zip:</span> {{ m.contact.university.zip }}
+		                    </li>
+		                    <li>
+		                        <a href="http://{{ m.contact.university.website }}" target="_blank">{{ m.contact.university.website }}</a>
+		                    </li>
+		                </ul>
+		                <a href="https://www.google.ca/maps/@{{m.contact.university.latitude}},{{m.contact.university.longitude}}"><img src="https://maps.googleapis.com/maps/api/staticmap?center={{m.contact.university.latitude}},{{m.contact.university.longitude}}&zoom=13&size=600x300&maptype=hybrid&key=AIzaSyD-1U02MIki39EJRZXh0cKDdIEKJZUSBxA"></a>
+	                </div> <!-- /Modal -->
+	                
+	                <!-- modal script -->
+	                <script>
+					  $(function() {
+					    $('a[data-modal]').on('click', function() {
+					      $($(this).data('modal')).modal();
+					      return false;
+					    });
+					  });
+					</script><!-- end modal script -->
+	            </div><!-- /callout -->
+	    </div>
+	</div><!-- Message List -->
+
+	
+		<!-- Book List-->
+	    <div class="small-12 columns ">
+	        <div class="callout curved-borders">
+	            <h3><span class="black">Book</span> List</h3>
+		            <table>
+		                <thead>
+		                <tr>
+		                    <th>
+		                        <a href="" ng-click="sortField='isbn'; sortReverse = !sortReverse">ISBN-10 <span ng-show="sortField=='isbn'"><i ng-if="sortReverse" class="material-icons">keyboard_arrow_up</i><i ng-if="!sortReverse" class="material-icons">keyboard_arrow_down</i></span></a>
+		                    </th>
+		                    <th>
+		                        <a href="" ng-click="sortField='title'; sortReverse = !sortReverse">Title <span ng-show="sortField=='title'"><i ng-if="sortReverse" class="material-icons">keyboard_arrow_up</i><i ng-if="!sortReverse" class="material-icons">keyboard_arrow_down</i></span></a>
+		                    </th>
+		                    <th>
+		                        <a href="" ng-click="sortField='category'; sortReverse = !sortReverse">Category <span ng-show="sortField=='category'"><i ng-if="sortReverse" class="material-icons">keyboard_arrow_up</i><i ng-if="!sortReverse" class="material-icons">keyboard_arrow_down</i></span></a>
+		                    </th>
+		                </tr>
+		                </thead>
+		                <tbody>
+		                <tr ng-repeat="b in user.employee.books | orderBy:sortField:sortReverse">
+		                    <td>
+		                        {{ b.isbn10 }}
+		                    </td>
+		                    <td>
+		                        {{ b.title }}
+		                    </td>
+		                    <td>
+		                        {{ b.category }}
+		                    </td>
+		                </tr>
+		                </tbody>
+		            </table>
+	        </div>
+	    </div><!-- Book List -->
+    </div>
+</div>
