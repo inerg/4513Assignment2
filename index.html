@@ -1,182 +1,36 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en" dir="ltr">
-<head>
-	<meta charset="utf-8">
+<html ng-app="assign2app">
+  <head lang="en">
+    <title>Assignment 2 - Hazel, Josh, Bradley</title>
+    
+   	<meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-	<title>Assignment 2 - Dashboard</title>
+  	<script src="js/vendor/jquery.js"></script>
+	  <link rel="stylesheet" href="css/foundation.css">
+	  <link rel="stylesheet" href="css/styles.css">
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	  
     
-	<link rel="stylesheet" href="css/foundation.css">
-	<link rel="stylesheet" href="css/styles.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	
-	<script src="js/vendor/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    
+    <script src="js/angular/controllers.js"></script>
+    <script src="js/angular/main.js"></script>
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
     <script src="js/app.js"></script>
-	
-</head>
-<body>
-	<!-- Navigation -->
-	<div class="top-bar">
-		<div class="top-bar-left">
-			<h1 class="clear-pm">
-				<a class="wll-link" href="index.html">
-				We<span class="pink">Love</span>Lists<span class="dot-com">.com</span>
-				</a>
-			</h1>
-			<ul class="menu menu-text clear-pm">
-				<li class="about-adj">
-					<span class="nav-divide">|</span>
-					<a href="about.html"> About </a>
-				</li>
-				<li>
-					<span class="nav-divide">|</span>
-					<a href="index.html"> Dashboard </a>
-				</li>
-			</ul>
-		</div>
-		
-		<div class="top-bar-right">
-			<ul class="menu">
-			  <li class="nav-welcome">Welcome, USERNAME <span class="nav-divide">|</span> <a href="#">Logout</a></li>
-			  <li><img src="resources/small-logo.png"/></li>
-			</ul>
-		</div>
-	</div>
-	
-	<!-- Content -->
-	<div class="title"><h2>Dashboard</h2></div>
-    <div class="row">
-		<div class="small-4 columns">
-			<div class="callout curved-borders">
-				<h3><span class="black">To-Do</span> List</h3>
-				<div>
-					<ul class="menu">
-						<li>Sort by: </li>
-						<li><a>Date</a></li>
-					</ul>
-				</div>
-				<ul class="no-bullet">
-					<li><div class="callout warning curved-borders"><i class="material-icons float-left">clear</i></a> Nunc nisl.<a href="" ><i class="material-icons float-right">mode_edit</i></a></div></li>					<li class="callout warning curved-borders"><i class="material-icons float-left">clear</i></a> Integer ac neque.<a href="" ><i class="material-icons float-right">mode_edit</i></a></li>
-					<li><div class="callout success curved-borders"><i class="material-icons float-left">clear</i></a> Aliquam sit amet diam in magna bibendum imperdiet.<a href="" ><i class="material-icons float-right">mode_edit</i></a></div></li>
-					<li><div class="callout alert curved-borders"><i class="material-icons float-left">clear</i></a> Suspendisse accumsan tortor quis turpis.<a href="" ><i class="material-icons float-right">mode_edit</i></a><div></div></li>
-
-					<a href="" ><i class="material-icons float-right">add</i></a></br>
-				</ul>
-			</div>
-		</div><!-- /To-Do List -->
-		
-		<div class="small-8 columns">
-			<div class="callout curved-borders">
-				<h3><span class="black">Message</span> List</h3>
-				<div class="callout">
-					<ul class="no-bullet">
-						<li>
-							Kenneth Reed
-						</li>
-						<li>
-							8/10/2015
-						</li>
-						<li>
-							Response
-						</li>
-						<li>
-							<a data-open="universityModal">University name</a>
-						</li>
-					</ul>
-					<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra,
-						magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi."</p>
-
-					<div class="reveal" id="universityModal" data-reveal>
-						University details
-						<ul class="no-bullet">
-							<li>
-								Immaculata University
-							</li>
-							<li>
-								Address:  1145 King Rd, Immaculata, Pennsylvania
-							</li>
-							<li>
-								19345-0702
-							</li>
-							<li>
-								<a href="www.immaculata.edu">www.immaculata.edu</a>
-							</li>
-						</ul>
-						<img src="https://maps.googleapis.com/maps/api/staticmap?center=39.980943,-75.158267&zoom=13&size=600x300&maptype=hybrid&key=AIzaSyCkJDwm_5eTtWNLlnFDHz9LQ3O_otXVBVo">
-						<!--Map of university (yes)< AIzaSyCkJDwm_5eTtWNLlnFDHz9LQ3O_otXVBVo>-->
-						<button class="close-button" data-close aria-label="Close reveal" type="button">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-				</div>
-
-			</div>
-		</div><!-- Message List -->
-	</div>
-
-	
-	<div class="row">
-		<div class="small-8 small-offset-4 columns">
-			<div class="callout curved-borders">
-				<h3><span class="black">Book</span> List</h3>
-				<table>
-					<thead>
-					<tr>
-						<th>
-							isbn10 <i class="material-icons">keyboard_arrow_up</i>
-						</th>
-						<th>
-							Title
-						</th>
-						<th>
-							Category
-						</th>
-					</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								0133251039
-							</td>
-							<td>
-								Introduction to Financial Accounting
-							</td>
-							<td>
-								Business
-							</td>
-						</tr>
-						<tr>
-							<td>
-								0133127648
-							</td>
-							<td>
-								Public Relations Practices
-							</td>
-							<td>
-								Business
-							</td>
-						</tr>
-						<tr>
-							<td>
-								0321826035
-							</td>
-							<td>
-								Introductory & Intermediate Algebra 3e
-							</td>
-							<td>
-								Mathematics
-							</td>
-						</tr>
-					</tbody>
-				</table>
-
-			</div>
-		</div><!-- Book List -->
-	</div>
-	</div>
-
-</body>
+    
+    <script src="jquery/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="jquery/jquery.modal.css" type="text/css" media="screen" />
+    
+  </head>
+  <body>
+    <div class="container">
+      <div ng-view></div>
+    </div>
+  
+  </body>
 </html>
