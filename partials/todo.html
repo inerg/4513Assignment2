@@ -40,65 +40,93 @@
 			                 <div ng-if="t.priority == 'medium'" class="callout warning curved-borders-med">
 			                	<a ng-click="deltodo(t.id)" ><i class="material-icons float-left">clear</i></a>
 			
-			                    
-			                    
-			                    Desctiption:<div ng-init="desc=t.description">
+			                    Description:<div ng-init="desc=t.description">
 			                   	 <input type="text" ng-model="desc" />
         						</div>
 			                    
-			                    Priority (low, medium, high):<div ng-init="prior=t.priority">
-			                   	 <input type="text" ng-model="prior" />
+        						
+        						Priority:<div ng-init="prior=t.priority">
+			                   	 <select ng-model="p1" ng-init="p1=prior">
+			                   	 	<option value={{prior}} selected>{{prior}}</option>
+			                   	 	<option value="low">low</option>
+			                   	 	<option value="medium">medium</option>
+			                   	 	<option value="high">high</option>
+			                   	 </select>
         						</div>
-        					
-        						Status(pending, active, completed):<div ng-init="stat=t.status">
-			                   	 <input type="text" ng-model="stat" />
+        
+			            		Status:<div ng-init="stat=t.status">
+			            			<select ng-model="s1" ng-init="s1=stat">
+			                   	 	<option value={{stat}} selected>{{stat}}</option>
+			                   	 	<option value="pending">pending</option>
+			                   	 	<option value="active">active</option>
+			                   	 	<option value="completed">completed</option>
+			                   	 </select>
         						</div>
-        					
-			                    <!--<br/><span class="warning label" contentEditable="true"><div ng-model="ngprior" >{{ t.priority }}</div></span>-->
-			                    <!--<span class="pink-label label" contentEditable="true"><div ng-model="ngstat">{{ t.status }}</div></span>-->
-			                    <a ng-click="edittodo(desc, stat, prior, t.id)"><i class="material-icons float-right">check</i></a><br/>
+			            
+			            		<a ng-click="edittodo(desc, s1, p1, t.id)"><i class="material-icons float-right">check</i></a><br/>
 			            
 		                    </div>
 			                <div ng-if="t.priority == 'low'" class="callout success curved-borders">
 			                	<a ng-click="deltodo(t.id)" ><i class="material-icons float-left">clear</i></a>
 			
 			                    
-			                    Desctiption:<div ng-init="desc=t.description">
+			                    Description:<div ng-init="desc=t.description">
 			                   	 <input type="text" ng-model="desc" />
         						</div>
 			                    
-			                    Priority(low, medium, high):<div ng-init="prior=t.priority">
-			                   	 <input type="text" ng-model="prior" />
+        						
+        						Priority:<div ng-init="prior=t.priority">
+			                   	 <select ng-model="p1" ng-init="p1=prior">
+			                   	 	<option value={{prior}} disabled selected>{{prior}}</option>
+			                   	 	<option value="low">low</option>
+			                   	 	<option value="medium">medium</option>
+			                   	 	<option value="high">high</option>
+			                   	 </select>
         						</div>
         					
-        						Status(pending, active, completed):<div ng-init="stat=t.status">
-			                   	 <input type="text" ng-model="stat" />
+        					
+        						Status:<div ng-init="stat=t.status">
+			            			<select ng-model="s1" ng-init="s1=stat">
+			                   	 	<option value={{stat}} disabled selected>{{stat}}</option>
+			                   	 	<option value="pending">pending</option>
+			                   	 	<option value="active">active</option>
+			                   	 	<option value="completed">completed</option>
+			                   	 </select>
         						</div>
         					
-			                    <!--<br/><span class="success label" contentEditable="true"><div ng-model="ngprior">{{ t.priority }}</div></span>-->
-			                    <!--<span class="pink-label label" contentEditable="true"><div ng-model="ngstat">{{ t.status }}</div></span>-->
-			                    <a ng-click="edittodo(desc, stat, prior, t.id)"><i class="material-icons float-right">check</i></a><br/>
+        					
+        		
+			                    <a ng-click="edittodo(desc, s1, p1, t.id)"><i class="material-icons float-right">check</i></a><br/>
 		               
 		                    </div>
 			                <div ng-if="t.priority == 'high'" class="callout alert curved-borders-high">
 			                    <a ng-click="deltodo(t.id)" ><i class="material-icons float-left">clear</i></a>
 			   
 			                   	
-			                   	Desctiption:<div ng-init="desc=t.description">
+			                   	Description:<div ng-init="desc=t.description">
 			                   	 <input type="text" ng-model="desc" />
         						</div>
-			                   	
-			                   	 Priority(low, medium, high):<div ng-init="prior=t.priority">
-			                   	 <input type="text" ng-model="prior" />
+		
+        						
+        						Priority:<div ng-init="prior=t.priority">
+			                   	 <select ng-model="p1" ng-init="p1=prior">
+			                   	 	<option value={{prior}} disabled selected>{{prior}}</option>
+			                   	 	<option value="low">low</option>
+			                   	 	<option value="medium">medium</option>
+			                   	 	<option value="high">high</option>
+			                   	 </select>
         						</div>
-        					
-        						Status(pending, active, completed):<div ng-init="stat=t.status">
-			                   	 <input type="text" ng-model="stat" />
+        						
+        						Status:<div ng-init="stat=t.status">
+			            			<select ng-model="s1" ng-init="s1=stat">
+			                   	 	<option value={{stat}} disabled selected>{{stat}}</option>
+			                   	 	<option value="pending">pending</option>
+			                   	 	<option value="active">active</option>
+			                   	 	<option value="completed">completed</option>
+			                   	 </select>
         						</div>
-        					
-			                    <!--<br/><span class="alert label" contentEditable="true"><div ng-model="ngprior">{{ t.priority }}</div></span>-->
-			                    <!--<span class="pink-label label" contentEditable="true"><div ng-model="ngstat">{{ t.status }}</div></span>-->
-			      	            <a ng-click="edittodo(desc, stat, prior, t.id)"><i class="material-icons float-right">check</i></a><br/>
+
+			      	            <a ng-click="edittodo(desc, s1, p1, t.id)"><i class="material-icons float-right">check</i></a><br/>
 			                
 			                </div>
 			            </li>

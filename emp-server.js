@@ -19,7 +19,7 @@ app.use(parser.urlencoded({
 }));
 
 //Mongoose connect to mongodb
-mg.connect('mongodb://localhost:27017/assign2'); //employee server is called emp
+mg.connect('mongodb://localhost:27017/emp'); //employee server is called emp 
 //to make db via terminal use:
 //mongoimport --db emp --collection employees --drop --file employees.json
 
@@ -87,7 +87,6 @@ var Employee = mg.model('Employee', employeeSchema);
 //Fetches all users: Currently not used
 app.route('/api/employees')
 .get(function (req, resp) {
-    console.log("Saw Request");
     resp.setHeader('Content-Type', 'application/json');
     Employee.find({}, function(err, data) { 
         if (err) { 
@@ -188,6 +187,7 @@ app.route('/api/employees/:usn/todoedit/:id/:stts/:prio/:desc')
         { 
             'employee.todo.$.status': todoStatus,
             'employee.todo.$.priority': todoPriority,
+            'employee.todo.$.date': newdate,
             'employee.todo.$.description': todoDesc
         }
         
@@ -222,9 +222,7 @@ app.route('/api/employees/:usn/tododel/:id')
 
 //Tells it what port to run in
 //process.env.PORT is port 8080, 8081 causes glitches
-app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function () {
-    console.log('Example app listening on port 3000!');
-});
+app.listen(process.env.PORT, process.env.IP);
 
 //Terminal Instructions:
 //Terminal 1: mongod
